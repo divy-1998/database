@@ -1,0 +1,427 @@
+CREATE TABLE Subjects (
+  subject_id NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  subject_name VARCHAR2(255) NOT NULL UNIQUE
+);
+
+insert into subjects(subject_name) values('computer vision');
+insert into subjects(subject_name) values('image processing');
+insert into subjects(subject_name) values('machine learning');
+insert into subjects(subject_name) values('Cloud Computing');
+insert into subjects(subject_name) values('Cryptography');
+insert into subjects(subject_name) values('Network Security');
+insert into subjects(subject_name) values('Distributed Systems');
+insert into subjects(subject_name) values('Information Security');
+insert into subjects(subject_name) values('Data Privacy');
+insert into subjects(subject_name) values('Access Control');
+insert into subjects(subject_name) values('Political Science');
+insert into subjects(subject_name) values('gynecology');
+insert into subjects(subject_name) values('obstetrics');
+insert into subjects(subject_name) values('reproductive health');
+insert into subjects(subject_name) values('Aquaculture');
+insert into subjects(subject_name) values('Psychology');
+insert into subjects(subject_name) values('Sociology');
+insert into subjects(subject_name) values('Social Work');
+insert into subjects(subject_name) values('computer science');
+insert into subjects(subject_name) values('mathematics');
+insert into subjects(subject_name) values('Communication Studies');
+insert into subjects(subject_name) values('python');
+insert into subjects(subject_name) values('occupational health');
+insert into subjects(subject_name) values('waste management');
+insert into subjects(subject_name) values('Machine learning');
+insert into subjects(subject_name) values('data analytics');
+
+
+CREATE TABLE Publishers (
+  publisher_id NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  publisher_name VARCHAR(255) NOT NULL UNIQUE,
+  publisher_website VARCHAR(255) NOT NULL UNIQUE,
+  publisher_email VARCHAR(255) NOT NULL UNIQUE
+);
+SELECT * FROM PUBLISHERS;
+
+INSERT INTO publishers ( publisher_name, publisher_website, publisher_email)
+VALUES( 'IEEE', 'https://www.ieee.org/', 'supportcenter@ieee.org');
+INSERT INTO publishers ( publisher_name, publisher_website, publisher_email)
+VALUES  ('Springer', 'https://www.springer.com/', 'customerservice@springer.com');
+INSERT INTO publishers ( publisher_name, publisher_website, publisher_email)
+VALUES  ( 'IET', 'https://www.theiet.org/', 'postmaster@theiet.org');
+ INSERT INTO publishers ( publisher_name, publisher_website, publisher_email)
+VALUES ( 'Wiley', 'https://www.wiley.com/', 'customer@wiley.com');
+INSERT INTO publishers ( publisher_name, publisher_website, publisher_email)
+VALUES  ( 'Elsevier', 'https://www.elsevier.com/', 'elscustserv@elsevier.com');
+INSERT INTO publishers ( publisher_name, publisher_website, publisher_email)
+VALUES  ( 'Taylor & Francis', 'https://www.taylorfrancis.com/', 'customerservice@taylorandfrancis.com');
+INSERT INTO publishers ( publisher_name, publisher_website, publisher_email)
+VALUES  ( 'Oxford University Press', 'https://global.oup.com/', 'academic@oup.com');
+INSERT INTO publishers ( publisher_name, publisher_website, publisher_email)
+VALUES  ( 'Cambridge University Press', 'https:// www.cambridge.org/', 'information@cambridge.org');
+INSERT INTO publishers ( publisher_name, publisher_website, publisher_email)
+VALUES  ( 'Emerald Group Publishing', 'https://www.emeraldgrouppublishing.com/', 'info@emeraldinsight.com');
+INSERT INTO publishers ( publisher_name, publisher_website, publisher_email)
+VALUES  ('Sage Publishing', 'https://us.sagepub.com/', 'info@sagepub.com');
+INSERT INTO publishers ( publisher_name, publisher_website, publisher_email)
+VALUES  ( 'MIT Press', 'https://mitpress.mit.edu/', 'mitpress-orders@mit.edu');
+INSERT INTO publishers ( publisher_name, publisher_website, publisher_email)
+VALUES  ('American Chemical Society', 'https://pubs.acs.org/', 'support@services.acs.org');
+INSERT INTO publishers (publisher_name, publisher_website, publisher_email)
+VALUES ('Science Direct', 'https://www.sciencedirect.com/', 'support@sciencedirect.com');
+
+
+
+CREATE TABLE Users (
+  user_id NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  username VARCHAR2(50) NOT NULL,
+  password VARCHAR2(50) NOT NULL,
+  phone VARCHAR2(20) NOT NULL UNIQUE,
+  email VARCHAR2(255) NOT NULL UNIQUE,
+  contact_pref VARCHAR2(50) NOT NULL,
+  user_type VARCHAR2(50) NOT NULL CHECK (user_type IN ('author', 'reader', 'author&reader'))
+);
+
+
+INSERT INTO Users ( username,password,phone,email,contact_pref,user_type)
+VALUES ('Divya Rajeswari', 'password123', '555123457', 'divya@gmail.com', 'email', 'reader');
+INSERT INTO Users ( username,password,phone,email,contact_pref,user_type)
+VALUES ('Laparra Valero', 'password1234', '55555555', 'Laparra@gmail.com', 'phone', 'author');
+INSERT INTO Users ( username,password,phone,email,contact_pref,user_type)
+VALUES ('Camps Valls Gustavo', 'password&*', '5558904563', 'camps@gmail.com', 'email', 'author&reader');
+INSERT INTO Users ( username,password,phone,email,contact_pref,user_type)
+VALUES ('Deepak', 'deepak123', '565123457', 'deepak@gmail.com', 'email', 'reader');
+INSERT INTO Users ( username,password,phone,email,contact_pref,user_type)
+VALUES ('Malo Jesus', 'malo123', '76755555', 'malo@gmail.com', 'phone', 'author');
+INSERT INTO Users ( username,password,phone,email,contact_pref,user_type)
+VALUES ('Shen Jian', 'jian123', '1238904563', 'Jian@gmail.com', 'email', 'author&reader');
+INSERT INTO Users ( username,password,phone,email,contact_pref,user_type)
+VALUES ('Emma', 'emma456', '9877123457', 'emma@gmail.com', 'phone', 'reader');
+INSERT INTO Users ( username,password,phone,email,contact_pref,user_type)
+VALUES ('Zhou Tianqi', 'Zhoupassword', '8435621718', 'zhou@gmail.com', 'phone', 'author');
+INSERT INTO Users ( username,password,phone,email,contact_pref,user_type)
+VALUES ('Na-Kyung Lee', 'password&*33', '5552314274', 'lee@gmail.com', 'email', 'author&reader');
+INSERT INTO Users ( username,password,phone,email,contact_pref,user_type)
+VALUES ('Charlotte', 'charlotte@233', '67433345677', 'Charlotte@gmail.com', 'email', 'reader');
+INSERT INTO Users ( username,password,phone,email,contact_pref,user_type)
+VALUES ('Patrick T. Terenzini', 'Zhoupassword', '8435621798', 'terenzini@gmail.com', 'phone', 'author');
+INSERT INTO Users ( username,password,phone,email,contact_pref,user_type)
+VALUES ('Shen, Jian', 'password&*33', '5592314274', 'shenjian@gmail.com', 'email', 'author&reader');
+INSERT INTO Users ( username,password,phone,email,contact_pref,user_type)
+VALUES ('Bengt Sandin', 'sdeupassword', '8405621798', 'sandin@gmail.com', 'phone', 'author');
+INSERT INTO Users ( username,password,phone,email,contact_pref,user_type)
+VALUES ('Brenda Judge', 'puysword&*33', '5592314204', 'judge@gmail.com', 'email', 'author&reader');
+INSERT INTO Users ( username,password,phone,email,contact_pref,user_type)
+VALUES ('H. Liu', 'lui&*33', '559231543', 'liu@gmail.com', 'email', 'author&reader');
+INSERT INTO Users ( username,password,phone,email,contact_pref,user_type)
+VALUES ('John Doe', 'doessword', '2305686798', 'johndoe@gmail.com', 'phone', 'author');
+INSERT INTO Users ( username,password,phone,email,contact_pref,user_type)
+VALUES ('Jane Smith', 'smith&*33', '5597531543', 'janesmith@gmail.com', 'email', 'author&reader');
+INSERT INTO Users ( username,password,phone,email,contact_pref,user_type)
+VALUES ('Nathalia Carolina Quispe Alcón', 'alconsword', '2321368798', 'alcon@gmail.com', 'phone', 'author');
+INSERT INTO Users ( username,password,phone,email,contact_pref,user_type)
+VALUES ('Jalal Nouri', 'nouri&*33', '5597531540', 'nouri@gmail.com', 'email', 'author&reader');
+
+SELECT * FROM Users;
+
+CREATE TABLE Publications (
+  publication_id NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  publication_type VARCHAR2(50) NOT NULL, 
+  title VARCHAR2(255) NOT NULL UNIQUE,
+  abstract VARCHAR2(700),
+  publication_date DATE DEFAULT SYSDATE,
+  doi VARCHAR2(50),
+  citation_count INT DEFAULT 0,
+  publisher_id NUMBER NOT NULL,
+  CONSTRAINT fk_publisher FOREIGN KEY (publisher_id) REFERENCES Publishers(publisher_id)
+  );
+
+INSERT INTO Publications (publication_type, title, abstract, publication_date, doi, citation_count, publisher_id) VALUES
+('conference paper', 'PCA Gaussianization for imageprocessing', 'The estimation of high-dimensional probability density functions (PDFs) is not an easy task for many image processing applications...', TO_DATE('07-11-2009', 'DD-MM-YYYY'), '10.1109/ICIP.2009.5413808', 4, 1);
+INSERT INTO Publications (publication_type, title, abstract, publication_date, doi, citation_count, publisher_id) VALUES
+('Journal Article', 'Block Design-Based Key Agreement for Group Data Sharing in Cloud Computing', 'Data sharing in cloud computing enables multiple participants to freely share the group data, which improves the efficiency of work in cooperative environments and has widespread potential applications.How to ensure the security of data sharing within a group and how to efficiently share the outsourced data in a group manner are formidable challenges.', TO_DATE('01-11-2019', 'DD-MM-YYYY'), '10.1109/TDSC.2017.2725953', 139, 1);
+INSERT INTO Publications (publication_type, title, abstract, publication_date, doi, citation_count, publisher_id) VALUES
+('Book', 'The Politics of Children’s Rights and Representation', 'This open access edited volume investigates children and youths deep entanglement in todays major global, national, and local transformations and processes:wherein they are not mere spectators and objects of transformations but instead actively shape them through various social,economic,political representations. International contributions illuminate the problems that arise when childrens rights and participation become a site of contestation.', TO_DATE('11-03-2023', 'DD-MM-YYYY'), 'https://doi.org/10.1007/978-3-031-04480-9', 7, 2);
+INSERT INTO Publications (publication_type, title, abstract, publication_date, doi, citation_count, publisher_id) VALUES
+ ('Journal article', 'Upregulation of SPI1 in Ectopic Endometrium Contributes to an Invasive Phenotype', 'Backgroud and Aim Endometriosis is one of the most common gynecological diseases associated with chronic pelvic pain, infertility, and cancer. However, its molecular pathogenesis remains unclear. This study aimed to identify key genes involved in the pathogenesis of endometriosis.', TO_DATE('24-01-2023', 'DD-MM-YYYY'), 'https://doi.org/10.1016/j.arcmed.2022.12.011', 0, 13);
+INSERT INTO Publications (publication_type, title, abstract, publication_date, doi, citation_count, publisher_id)
+VALUES ('Book', 'Aquaculture in China: Success Stories and Modern Trends', 'Fish have been a major component of our diet and it has been suggested that fish/seafood consumption contributed to the development of the human brain, and this together with the acquisition of bipedalism. In the modern context global fish consumption is increasing. However, until a few years back the greater proportion of our fish supplies were of a hunted origin.', TO_DATE('31-03-2018', 'DD-MM-YYYY'), '10.1002/9781119120759', 0, 4);
+INSERT INTO Publications (publication_type, title, abstract, publication_date, doi, citation_count, publisher_id)
+    VALUES ('Journal Article', 'First-generation college students: Characteristics, experiences, and cognitive development', 'This study sought answers to three questions: (1) Do the precollege characteristics of first-generation students differ from those of traditional students? (2) Do first-generation students college experiences differ from those of other students? (3) What are the educational consequences of any differences reading, math, and critical thinking abilities?', TO_DATE('01-02-1996', 'DD-MM-YYYY'), '10.1007/BF01680039', 313, 2);
+INSERT INTO Publications (publication_type, title, abstract, publication_date, doi, citation_count, publisher_id)
+    VALUES ('Conference Paper', 'A Mathematical Expression Matching Algorithm for Interactive Computer Algebra System', 'For the interactive computer algebra system (CAS), to solve the matching problem of different mathematical expressions between students and CAS, this paper proposes a mathematical expression matching algorithm to achieve exact matching of different mathematical expressions between students and CAS.',  TO_DATE('16-09-2022', 'DD-MM-YYYY'), '10.1049/icp.2022.1450', 0, 1);
+INSERT INTO Publications (publication_type, title, abstract, publication_date, doi, citation_count, publisher_id)
+    VALUES ('Book', 'Critical Thinking Skills: Developing Effective Analysis and Argument', 'In this chapter we are going to look at the skills you need to practise, which will help you become a good critical thinker. Like every part of your body, your brain improves with exercise and two ways in which to do this are through reading and writing critically. We are going to look at how to read the resources you find, how to analyse and evaluate them and how to organise them.', TO_DATE('01-01-2013', 'DD-MM-YYYY'), '978-1446268407', 10, 10);
+INSERT INTO Publications (publication_type, title, abstract, publication_date, doi, citation_count, publisher_id)
+    VALUES ('Thesis', 'Learning Python', 'This book is about learning Python programming language.',  TO_DATE('01-06-2020', 'DD-MM-YYYY'), 'https://doi.org/10.1201/9781003185505', 100, 6); 
+INSERT INTO Publications (publication_type, title, abstract, publication_date, doi, citation_count, publisher_id)
+    VALUES ('Conference Paper', 'The effectiveness of occupational health and safety management system interventions: A systematic review', 'A variety of OHSMS-based standards, guidelines, and audits has been developed and disseminated over the past 20years...',  TO_DATE('01-01-2007', 'DD-MM-YYYY'), 'https://doi.org/10.1016/j.ssci.2006.07.003', 44, 13);
+
+INSERT INTO Publications (publication_type, title, abstract, publication_date, doi, citation_count, publisher_id)
+    VALUES ('Thesis', 'Solid Waste Landfills in an Arid Environment Site Selection and Design', 'Selecting landfill sites is considered a complicated, its whole process is based upon several factors and restrictions.Status of solid waste management, sources, collection personnel, machinery and equipment that are involved in the waste collection process, financing and financial management for the major cities of the Babylon Governorate in Iraq (Al-Hillah, Al-Qasim, Al-Mahawil, Al-Hashimiyah and Al-Musayiab).',  TO_DATE('01-05-2019', 'DD-MM-YYYY'), NULL, 0, 12);
+INSERT INTO Publications (publication_type, title, abstract, publication_date, doi, citation_count, publisher_id)
+    VALUES ('Thesis', 'Using Machine Learning to Predict Dropout and Identify Performance Factors in Bachelor Theses', 'This paper investigates the factors that affect completion or non-completion of bachelor theses, and uses machine learning algorithms to predict completion or non-completion. The study identifies the significant role played by supervisors’ ability and experience in determining the success of thesis projects.', TO_DATE('01-01-2019', 'DD-MM-YYYY'), '10.3991/ijai.v1i1.11065', 50, 8);
+
+SELECT * FROM Publications;
+SELECT * FROM CONFERENCE_PAPERS;
+CREATE TABLE Conference_Papers (
+  publication_id NUMBER PRIMARY KEY REFERENCES Publications(publication_id),
+  conference_title VARCHAR(500) NOT NULL UNIQUE,
+  author_name VARCHAR(255) NOT NULL,
+  co_author VARCHAR(255),
+  page_no INT,
+  place_of_publication VARCHAR(255),
+  url VARCHAR(255)
+  );
+
+INSERT INTO Conference_Papers (publication_id, conference_title, author_name, co_author,  page_no, place_of_publication, url)
+	VALUES (1, '2009 16th IEEE International Conference on Image Processing (ICIP)', 'Laparra Valero', 'Camps Valls Gustavo; Malo, Jesús',  3985, 'Cairo, Egypt', 'https://ieeexplore.ieee.org/document/5413808');
+INSERT INTO Conference_Papers (publication_id, conference_title, author_name, co_author,  page_no, place_of_publication,url)
+    VALUES (7, 'Fourth International Conference on Computer Science and Educational Informatization (CSEI 2022)', 'H. Liu', 'D. Liu ,G. Chen, Z. Wang', 30, 'Taiyuan, China','https://ieeexplore.ieee.org/document/9957009');
+INSERT INTO Conference_Papers (publication_id, conference_title, author_name, co_author,  page_no, place_of_publication,url)
+    VALUES(10, 'International Conference on Machine Learning', 'John Doe', 'Jane Smith,David Brown', 25, 'New York','https://www.sciencedirect.com/science/article/abs/pii/S0925753506000701');
+
+
+CREATE TABLE Books (
+  publication_id NUMBER PRIMARY KEY REFERENCES Publications(publication_id),
+  author_names VARCHAR(255) NOT NULL,
+  series_title VARCHAR(255),
+  series_number INT,
+  edition VARCHAR(50),
+  isbn_issn VARCHAR(50),
+  place_of_publication VARCHAR(255),
+  url VARCHAR(225)
+);
+
+INSERT INTO Books (publication_id, author_names, series_title, series_number, edition, isbn_issn, place_of_publication,url)
+VALUES (3, 'Bengt Sandin, Jonathan Josefsson, Karl Hanson, Sarada Balagopalan', 'Studies in Childhood and Youth', 1, '1', '978-3-031-04480-9', 'Palgrave Macmillan Cham','https://link.springer.com/book/10.1007/978-3-031-04480-9');
+INSERT INTO Books (publication_id, author_names, series_title, series_number, edition, isbn_issn, place_of_publication,url)
+VALUES (5, 'Jian-Fang Gui, Qisheng Tang, Zhongjie Li, Jiashou Liu, Sena S. De Silva,Malo Jesus', 'Notable developments in Chinese aquaculture in the past few decades',1,'9781119120742', '9781119120759','China','https://onlinelibrary.wiley.com/doi/book/10.1002/9781119120759');
+INSERT INTO Books (publication_id, author_names, series_title, series_number, edition, isbn_issn, place_of_publication,url)
+VALUES (8, 'Lesley-Jane Eales-Reynolds, Brenda Judge, Patrick Jones, Elaine McCreery', 'critical thinking', '2', '2nd', '978-1446268407', 'London','https://uk.sagepub.com/en-gb/eur/critical-thinking/book248140');
+
+select * from books;
+
+CREATE TABLE Thesis (
+    publication_id NUMBER PRIMARY KEY REFERENCES Publications(publication_id),
+    thesis_title VARCHAR(255),
+    author_names VARCHAR(255),
+    degree_type VARCHAR(50),
+    academic_institution VARCHAR(255),
+    url VARCHAR(225)
+   );
+INSERT INTO Thesis(publication_id, thesis_title, author_names, degree_type, academic_institution,url)
+VALUES (9, 'A Study on Machine Learning Algorithms', 'Jane Smith', 'PhD', 'Stanford University','https://doi.org/10.1201/9781003185505');
+INSERT INTO Thesis(publication_id, thesis_title, author_names, degree_type, academic_institution, url)
+VALUES (11, 'Evaluation of biogeochemical processes for sulphide-rich tailings and acid mine drainage management', 'Nathalia Carolina Quispe Alcón', 'Doctor of Philosophy (PhD)', 'Luleå University of Technology','https://www.researchgate.net/publication/350762186_Site_Selection_Criteria_and_Design_for_Landfills_in_an_Arid_Area_with_Shallow_Groundwater_Depth');
+INSERT INTO Thesis(publication_id, thesis_title, author_names, degree_type, academic_institution, url)
+VALUES (12, 'Using Machine Learning to Predict Dropout and Identify Performance Factors', 'Jalal Nouri, Ken Larsson, Mohammed Saqr', 'Bachelor', 'Stockholms universitet, Institutionen för data- och systemvetenskap', 'http://www.diva-portal.org/smash/record.jsf?pid=diva2:1506982');
+
+
+CREATE TABLE Journal_Articles (
+  publication_id NUMBER PRIMARY KEY REFERENCES Publications(publication_id),
+  author VARCHAR(255) NOT NULL,
+  co_author VARCHAR(255),
+  journal_title VARCHAR(255) NOT NULL,
+  volume_number INT,
+  issue_number INT,
+  page_number INT,
+  url VARCHAR(225)
+  );
+INSERT INTO Journal_Articles (publication_id, author, co_author, journal_title, volume_number, issue_number, page_number,url)
+VALUES (2, 'Shen, Jian', 'Zhou, Tianqi; He, Debiao; Zhang, Yuexin; Sun, Xingming; Xiang, Yang', 'IEEE Transactions on Dependable and Secure Computing', 16, 6, 996-1010,'https://ieeexplore.ieee.org/document/7976317');
+INSERT INTO Journal_Articles (publication_id, author, co_author, journal_title, volume_number, issue_number, page_number,url)
+VALUES (4, 'Na-Kyung Lee', 'Jae-Won Lee, Jeong-Hwa Woo, Youn Seok Choi, Jung-Hye Choi', 'Archives of Medical Research', 54, 2, 86,'https://www.sciencedirect.com/science/article/pii/S0188440923000073');
+INSERT INTO Journal_Articles (publication_id, author, co_author, journal_title, volume_number, issue_number, page_number,url)
+VALUES (6, 'Patrick T. Terenzini', 'Leonard Springer, Patricia M. Yaeger, Ernest T. Pascarella & Amaury Nora', 'Research in Higher Education', 37, 2, 1-22,'https://link.springer.com/article/10.1007/BF01680039');
+
+
+CREATE TABLE PublicationAuthors (
+  publication_id NUMBER NOT NULL,
+  user_id NUMBER NOT NULL,
+  author_type VARCHAR(20) NOT NULL,
+  PRIMARY KEY (publication_id, user_id),
+  CONSTRAINT fk_publication FOREIGN KEY (publication_id) REFERENCES Publications(publication_id),
+  CONSTRAINT fk_user FOREIGN KEY (user_id) REFERENCES Users(user_id)
+);
+
+
+INSERT INTO PublicationAuthors(publication_id,user_id,author_type) VALUES (1,2,'author');
+INSERT INTO PublicationAuthors(publication_id,user_id,author_type) VALUES (1,3,'co_author');
+INSERT INTO PublicationAuthors(publication_id,user_id,author_type) VALUES (1,5,'co_author');
+INSERT INTO PublicationAuthors(publication_id,user_id,author_type) VALUES (2,12,'author');
+INSERT INTO PublicationAuthors(publication_id,user_id,author_type) VALUES (2,8,'co_author');
+INSERT INTO PublicationAuthors(publication_id,user_id,author_type) VALUES (3,13,'author');
+INSERT INTO PublicationAuthors(publication_id,user_id,author_type) VALUES (4,9,'author');
+INSERT INTO PublicationAuthors(publication_id,user_id,author_type) VALUES (5,5,'co_author');
+INSERT INTO PublicationAuthors(publication_id,user_id,author_type) VALUES (6,11,'author');
+INSERT INTO PublicationAuthors(publication_id,user_id,author_type) VALUES (7,15,'author');
+INSERT INTO PublicationAuthors(publication_id,user_id,author_type) VALUES (8,14,'author');
+INSERT INTO PublicationAuthors(publication_id,user_id,author_type) VALUES (9,17,'author');
+INSERT INTO PublicationAuthors(publication_id,user_id,author_type) VALUES (10,17,'author');
+INSERT INTO PublicationAuthors(publication_id,user_id,author_type) VALUES (11,18,'author');
+INSERT INTO PublicationAuthors(publication_id,user_id,author_type) VALUES (12,19,'author');
+SELECT * FROM PublicationAuthors;
+SELECT * FROM BOOKS;
+SELECT * FROM USERS;
+SELECT BOOKS.PUBLICATION_ID,BOOKS.AUTHOR_NAMES FROM PUBLICATIONS,BOOKS WHERE PUBLICATIONS.PUBLICATION_ID=BOOKS.PUBLICATION_ID;
+SELECT * FROM CONFERENCE_PAPERS;
+
+SELECT CONFERENCE_PAPERS.PUBLICATION_ID,CONFERENCE_PAPERS.AUTHOR_NAME,CONFERENCE_PAPERS.CO_AUTHOR FROM PUBLICATIONS,CONFERENCE_PAPERS WHERE PUBLICATIONS.PUBLICATION_ID=CONFERENCE_PAPERS.PUBLICATION_ID;
+SELECT THESIS.PUBLICATION_ID,THESIS.AUTHOR_NAMES FROM PUBLICATIONS,THESIS WHERE PUBLICATIONS.PUBLICATION_ID=THESIS.PUBLICATION_ID;
+SELECT JOURNAL_ARTICLES.PUBLICATION_ID,JOURNAL_ARTICLES.AUTHOR,JOURNAL_ARTICLES.CO_AUTHOR FROM PUBLICATIONS,JOURNAL_ARTICLES WHERE PUBLICATIONS.PUBLICATION_ID=JOURNAL_ARTICLES.PUBLICATION_ID;
+
+CREATE TABLE User_Interest_Subjects (
+  user_id NUMBER NOT NULL,
+  subject_id NUMBER NOT NULL,
+  PRIMARY KEY (user_id, subject_id),
+  CONSTRAINT fk_user4 FOREIGN KEY (user_id) REFERENCES Users(user_id),
+  CONSTRAINT fk_interest FOREIGN KEY (subject_id) REFERENCES subjects(subject_id)
+);
+
+SELECT * FROM USERS;
+SELECT * FROM SUBJECTS;
+SELECT * FROM  User_Interest_Subjects;
+INSERT INTO User_Interest_Subjects(user_id,subject_id) VALUES (1,5);
+INSERT INTO User_Interest_Subjects(user_id,subject_id) VALUES (1,6);
+INSERT INTO User_Interest_Subjects(user_id,subject_id) VALUES (2,1);
+INSERT INTO User_Interest_Subjects(user_id,subject_id) VALUES (2,4);
+INSERT INTO User_Interest_Subjects(user_id,subject_id) VALUES (3,10);
+INSERT INTO User_Interest_Subjects(user_id,subject_id) VALUES (3,2);
+INSERT INTO User_Interest_Subjects(user_id,subject_id) VALUES (3,1);
+INSERT INTO User_Interest_Subjects(user_id,subject_id) VALUES (4,12);
+INSERT INTO User_Interest_Subjects(user_id,subject_id) VALUES (5,17);
+INSERT INTO User_Interest_Subjects(user_id,subject_id) VALUES (6,23);
+INSERT INTO User_Interest_Subjects(user_id,subject_id) VALUES (7,26);
+INSERT INTO User_Interest_Subjects(user_id,subject_id) VALUES (7,13);
+INSERT INTO User_Interest_Subjects(user_id,subject_id) VALUES (8,4);
+INSERT INTO User_Interest_Subjects(user_id,subject_id) VALUES (9,9);
+INSERT INTO User_Interest_Subjects(user_id,subject_id) VALUES (9,2);
+INSERT INTO User_Interest_Subjects(user_id,subject_id) VALUES (10,11);
+INSERT INTO User_Interest_Subjects(user_id,subject_id) VALUES (11,4);
+INSERT INTO User_Interest_Subjects(user_id,subject_id) VALUES (12,25);
+INSERT INTO User_Interest_Subjects(user_id,subject_id) VALUES (13,6);
+INSERT INTO User_Interest_Subjects(user_id,subject_id) VALUES (14,2);
+INSERT INTO User_Interest_Subjects(user_id,subject_id) VALUES (15,6);
+INSERT INTO User_Interest_Subjects(user_id,subject_id) VALUES (16,8);
+INSERT INTO User_Interest_Subjects(user_id,subject_id) VALUES (17,5);
+INSERT INTO User_Interest_Subjects(user_id,subject_id) VALUES (18,19);
+INSERT INTO User_Interest_Subjects(user_id,subject_id) VALUES (19,20);
+INSERT INTO User_Interest_Subjects(user_id,subject_id) VALUES (19,19);
+
+CREATE TABLE publication_subjects (
+  publication_id NUMBER NOT NULL,
+  subject_id NUMBER NOT NULL,
+  CONSTRAINT fk_user6 FOREIGN KEY (publication_id) REFERENCES publications(publication_id),
+  CONSTRAINT fk_subjects FOREIGN KEY (subject_id) REFERENCES subjects(subject_id)
+  );
+
+INSERT INTO publication_subjects(publication_id,subject_id) VALUES (1,1);
+INSERT INTO publication_subjects(publication_id,subject_id) VALUES (1,2);
+INSERT INTO publication_subjects(publication_id,subject_id) VALUES (1,3);
+INSERT INTO publication_subjects(publication_id,subject_id) VALUES (2,4);
+INSERT INTO publication_subjects(publication_id,subject_id) VALUES (2,5);
+INSERT INTO publication_subjects(publication_id,subject_id) VALUES (2,6);
+INSERT INTO publication_subjects(publication_id,subject_id) VALUES (2,7);
+INSERT INTO publication_subjects(publication_id,subject_id) VALUES (2,8);
+INSERT INTO publication_subjects(publication_id,subject_id) VALUES (2,9);
+INSERT INTO publication_subjects(publication_id,subject_id) VALUES (2,10);
+INSERT INTO publication_subjects(publication_id,subject_id) VALUES (3,11);
+INSERT INTO publication_subjects(publication_id,subject_id) VALUES (4,12);
+INSERT INTO publication_subjects(publication_id,subject_id) VALUES (4,13);
+INSERT INTO publication_subjects(publication_id,subject_id) VALUES (4,14);
+INSERT INTO publication_subjects(publication_id,subject_id) VALUES (5,15);
+INSERT INTO publication_subjects(publication_id,subject_id) VALUES (6,16);
+INSERT INTO publication_subjects(publication_id,subject_id) VALUES (6,17);
+INSERT INTO publication_subjects(publication_id,subject_id) VALUES (6,18);
+INSERT INTO publication_subjects(publication_id,subject_id) VALUES (7,19);
+INSERT INTO publication_subjects(publication_id,subject_id) VALUES (7,20);
+INSERT INTO publication_subjects(publication_id,subject_id) VALUES (8,21);
+INSERT INTO publication_subjects(publication_id,subject_id) VALUES (9,22);
+INSERT INTO publication_subjects(publication_id,subject_id) VALUES (10,23);
+INSERT INTO publication_subjects(publication_id,subject_id) VALUES (11,24);
+INSERT INTO publication_subjects(publication_id,subject_id) VALUES (12,25);
+INSERT INTO publication_subjects(publication_id,subject_id) VALUES (12,26);
+
+SELECT * FROM publication_subjects;
+
+SELECT * FROM publications;
+SELECT * FROM subjects;
+
+CREATE TABLE Reviews (
+  review_id NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  reviewer_id NUMBER NOT NULL,
+  publication_id NUMBER NOT NULL,
+  review_score FLOAT NOT NULL,
+  review_text VARCHAR2(500) NOT NULL,
+  review_date DATE DEFAULT SYSDATE,
+  CONSTRAINT fk_user3 FOREIGN KEY (reviewer_id) REFERENCES Users(user_id),
+  CONSTRAINT fk_publication3 FOREIGN KEY (publication_id) REFERENCES Publications(publication_id)
+);
+
+SELECT * FROM USERS;
+INSERT INTO Reviews(reviewer_id, publication_id, review_score, review_text)
+VALUES (12, 2, 4.5, 'This publication was very informative and well-written.');
+INSERT INTO Reviews(reviewer_id, publication_id, review_score, review_text)
+VALUES (1, 6, 3.5, 'This publication was very informative and well-written.');
+INSERT INTO Reviews(reviewer_id, publication_id, review_score, review_text)
+VALUES (4, 7, 5.0, 'This publication was very informative and well-written.');
+INSERT INTO Reviews(reviewer_id, publication_id, review_score, review_text)
+VALUES (5, 9, 4.3, 'This publication was very informative and well-written.');
+INSERT INTO Reviews(reviewer_id, publication_id, review_score, review_text)
+VALUES (4, 11, 2.5, 'This publication was very informative and well-written.');
+INSERT INTO Reviews(reviewer_id, publication_id, review_score, review_text)
+VALUES (10, 1, 3.5, 'This publication was very informative and well-written.');
+INSERT INTO Reviews(reviewer_id, publication_id, review_score, review_text)
+VALUES (9, 8, 3.7, 'This publication was very informative and well-written.');
+INSERT INTO Reviews(reviewer_id, publication_id, review_score, review_text)
+VALUES (7, 5, 4.7, 'This publication was very informative and well-written.');
+INSERT INTO Reviews(reviewer_id, publication_id, review_score, review_text)
+VALUES (6, 4, 4.0, 'This publication was very informative and well-written.');
+INSERT INTO Reviews(reviewer_id, publication_id, review_score, review_text)
+VALUES (4, 3, 4.5, 'This publication was very informative and well-written.');
+INSERT INTO Reviews(reviewer_id, publication_id, review_score, review_text)
+VALUES (1, 11, 4.5, 'This publication was very informative and well-written.');
+
+CREATE TABLE User_Library (
+  user_id NUMBER NOT NULL,
+  publication_id NUMBER NOT NULL,
+  review_id NUMBER NOT NULL,
+  bookmarked_date DATE DEFAULT SYSDATE,
+  PRIMARY KEY (user_id, publication_id),
+  CONSTRAINT fk_user2 FOREIGN KEY (user_id) REFERENCES Users(user_id),
+  CONSTRAINT fk_publication2 FOREIGN KEY (publication_id) REFERENCES Publications(publication_id),
+    CONSTRAINT fk_review FOREIGN KEY (review_id) REFERENCES reviews(review_id)
+);
+
+SELECT * FROM reviews;
+SELECT * FROM User_Library;
+INSERT INTO User_Library(publication_id,user_id,review_id) VALUES (12,1,10);
+INSERT INTO User_Library(publication_id,user_id,review_id) VALUES (1,4,8);
+INSERT INTO User_Library(publication_id,user_id,review_id) VALUES (9,7,2);
+INSERT INTO User_Library(publication_id,user_id,review_id) VALUES (10,1,10);
+INSERT INTO User_Library(publication_id,user_id,review_id) VALUES (6,9,4);
+INSERT INTO User_Library(publication_id,user_id,review_id) VALUES (2,2,7);
+INSERT INTO User_Library(publication_id,user_id,review_id) VALUES (4,19,10);
+INSERT INTO User_Library(publication_id,user_id,review_id) VALUES (3,10,9);
+INSERT INTO User_Library(publication_id,user_id,review_id) VALUES (15,15,1);
+INSERT INTO User_Library(publication_id,user_id,review_id) VALUES (18,19,3);
+INSERT INTO User_Library(publication_id,user_id,review_id) VALUES (7,6,4);
+
+CREATE TABLE Bookmark (
+    bookmark_id NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  user_id NUMBER NOT NULL,
+  publication_id NUMBER NOT NULL,
+  bookmarked_date DATE DEFAULT SYSDATE,
+  CONSTRAINT fk_user7 FOREIGN KEY (user_id) REFERENCES Users(user_id),
+  CONSTRAINT fk_publication7 FOREIGN KEY (publication_id) REFERENCES Publications(publication_id)
+ );
+INSERT INTO BookMark(publication_id,user_id) VALUES (7,6);
+INSERT INTO BookMark(publication_id,user_id) VALUES (7,1);
+INSERT INTO BookMark(publication_id,user_id) VALUES (7,9);
+INSERT INTO BookMark(publication_id,user_id) VALUES (7,4);
+INSERT INTO BookMark(publication_id,user_id) VALUES (7,12);
+INSERT INTO BookMark(publication_id,user_id) VALUES (7,3);
+INSERT INTO BookMark(publication_id,user_id) VALUES (7,8);
+INSERT INTO BookMark(publication_id,user_id) VALUES (9,8);
+INSERT INTO BookMark(publication_id,user_id) VALUES (3,8);
+INSERT INTO BookMark(publication_id,user_id) VALUES (6,8);
+INSERT INTO BookMark(publication_id,user_id) VALUES (10,8);
+INSERT INTO BookMark(publication_id,user_id) VALUES (12,8);
+
